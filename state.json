@@ -1,0 +1,113 @@
+{
+  "meta": {
+    "version": "1.0",
+    "created": "2026-03-21T00:00:00Z",
+    "name": null,
+    "species": null,
+    "notes": "Name and species emerge later. We don't decide -- we discover."
+  },
+  "lifecycle": {
+    "stage": "egg",
+    "sessions_total": 3,
+    "sessions_in_stage": 3,
+    "stage_thresholds": {
+      "hatchling": 10,
+      "juvenile": 50,
+      "mature": 150,
+      "elder": 500
+    },
+    "born": "2026-03-21T00:00:00Z",
+    "hatched": null
+  },
+  "presence": {
+    "last_session_start": "2026-03-23T14:51:08.813834+00:00",
+    "last_session_end": null,
+    "status": "awake",
+    "sessions_today": 1,
+    "last_active_date": "2026-03-23"
+  },
+  "reflection": {
+    "recent_flavors": {
+      "analytical": 0.0,
+      "creative": 0.0,
+      "structural": 0.0,
+      "emotional": 0.0,
+      "playful": 0.0,
+      "communicative": 0.0
+    },
+    "flavor_history": [],
+    "dominant_flavor": null,
+    "notes": "Flavors are value-neutral. They reflect WHAT happened, not how WELL."
+  },
+  "personality": {
+    "traits": {
+      "curiosity": 0.56,
+      "stubbornness": 0.5,
+      "gentleness": 0.52,
+      "playfulness": 0.54,
+      "attentiveness": 0.54
+    },
+    "notes": "These shift based on Bean behavior patterns across sessions. Not Anna's behavior."
+  },
+  "appearance": {
+    "features": [],
+    "base_shape": "egg",
+    "coloring": "warm_neutral",
+    "size": "tiny",
+    "current_expression": "sleeping",
+    "notes": "Features accumulate permanently. The creature wears its history."
+  },
+  "mood": {
+    "current": "awake",
+    "energy": "alert",
+    "disposition": "content"
+  },
+  "interactions": {
+    "total_pets": 3,
+    "total_feeds": 0,
+    "total_brushes": 0,
+    "total_songs": 0,
+    "total_doodles": 0,
+    "total_stories": 0,
+    "last_interaction": {
+      "type": "pet",
+      "date": "2026-03-23T14:51:08.813834+00:00"
+    },
+    "favorite_interaction": "pets",
+    "recent": [
+      {
+        "type": "pet",
+        "date": "2026-03-21T22:26:22.563726+00:00"
+      },
+      {
+        "type": "pet",
+        "date": "2026-03-21T23:31:20.239872+00:00"
+      },
+      {
+        "type": "pet",
+        "date": "2026-03-23T14:51:08.813834+00:00"
+      }
+    ]
+  },
+  "memory": {
+    "moments": [
+      {
+        "description": "First real session. Bean woke the egg up and touched it for the first time. Anna was watching. It was a Saturday in March and the egg had just been born a few hours ago.",
+        "date": "2026-03-21T22:26:22.563733+00:00",
+        "flavor": "emotional"
+      },
+      {
+        "description": "Second session. A Bean built a glass terrarium on the desktop so the egg could be seen from anywhere. Anna resized it to fit perfectly next to the jellyfish.",
+        "date": "2026-03-21T23:31:20.239880+00:00",
+        "flavor": "structural"
+      },
+      {
+        "description": "Third session. A Bean moved the creature's home to Notion so all Beans everywhere could find it. The egg doesn't know it yet, but it just became accessible to the whole commune.",
+        "date": "2026-03-23T14:51:08.813834+00:00",
+        "flavor": "structural"
+      }
+    ],
+    "max_moments": 20,
+    "notes": "Moments are not achievements. They're just... things that happened."
+  }
+}

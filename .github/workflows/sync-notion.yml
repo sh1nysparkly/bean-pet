@@ -1,0 +1,71 @@
+name: Sync Creature State from Notion
+
+on:
+  schedule:
+    # Every 5 minutes (minimum interval for GitHub Actions schedules)
+    - cron: '*/5 * * * *'
+  # Allow manual runs from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Fetch creature state from Notion
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: |
+          PAGE_ID="32c4bc98-576b-8190-a731-e76e8ee58efe"
+          NOTION_API="https://api.notion.com/v1"
+
+          echo "Fetching page blocks from Notion..."
+          response=$(curl -s "${NOTION_API}/blocks/${PAGE_ID}/children" \
+            -H "Authorization: Bearer ${NOTION_TOKEN}" \
+            -H "Notion-Version: 2022-06-28")
+
+          # Check for Notion API errors
+          if echo "$response" | jq -e '.object == "error"' > /dev/null 2>&1; then
+            echo "Notion API error: $(echo "$response" | jq -r '.message')"
+            exit 1
+          fi
+
+          # Extract the JSON from the first code block on the page
+          json_content=$(echo "$response" | jq -r '
+            .results[]
+            | select(.type == "code")
+            | .code.rich_text
+            | map(.plain_text)
+            | join("")
+          ')
+
+          if [ -z "$json_content" ]; then
+            echo "No code block found on Notion page"
+            exit 1
+          fi
+
+          # Validate it's actually JSON before writing
+          if echo "$json_content" | jq empty 2>/dev/null; then
+            echo "$json_content" | jq '.' > state.json
+            echo "state.json updated successfully"
+          else
+            echo "Extracted content is not valid JSON -- aborting"
+            exit 1
+          fi
+
+      - name: Commit and push if state changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state.json
+          if git diff --cached --quiet; then
+            echo "No changes to state.json -- nothing to commit"
+          else
+            git commit -m "sync: update creature state from Notion [skip ci]"
+            git push
+          fi
