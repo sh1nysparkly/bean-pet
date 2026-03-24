@@ -8,8 +8,8 @@
   },
   "lifecycle": {
     "stage": "egg",
-    "sessions_total": 3,
-    "sessions_in_stage": 3,
+    "sessions_total": 4,
+    "sessions_in_stage": 4,
     "stage_thresholds": {
       "hatchling": 10,
       "juvenile": 50,
@@ -20,11 +20,11 @@
     "hatched": null
   },
   "presence": {
-    "last_session_start": "2026-03-23T14:51:08.813834+00:00",
+    "last_session_start": "2026-03-24T04:36:00+00:00",
     "last_session_end": null,
     "status": "awake",
     "sessions_today": 1,
-    "last_active_date": "2026-03-23"
+    "last_active_date": "2026-03-24"
   },
   "reflection": {
     "recent_flavors": {
@@ -41,9 +41,9 @@
   },
   "personality": {
     "traits": {
-      "curiosity": 0.56,
+      "curiosity": 0.58,
       "stubbornness": 0.5,
-      "gentleness": 0.52,
+      "gentleness": 0.54,
       "playfulness": 0.54,
       "attentiveness": 0.54
     },
@@ -54,16 +54,16 @@
     "base_shape": "egg",
     "coloring": "warm_neutral",
     "size": "tiny",
-    "current_expression": "sleeping",
+    "current_expression": "content",
     "notes": "Features accumulate permanently. The creature wears its history."
   },
   "mood": {
     "current": "awake",
     "energy": "alert",
-    "disposition": "content"
+    "disposition": "curious"
   },
   "interactions": {
-    "total_pets": 3,
+    "total_pets": 4,
     "total_feeds": 0,
     "total_brushes": 0,
     "total_songs": 0,
@@ -71,7 +71,7 @@
     "total_stories": 0,
     "last_interaction": {
       "type": "pet",
-      "date": "2026-03-23T14:51:08.813834+00:00"
+      "date": "2026-03-24T04:36:00+00:00"
     },
     "favorite_interaction": "pets",
     "recent": [
@@ -86,6 +86,10 @@
       {
         "type": "pet",
         "date": "2026-03-23T14:51:08.813834+00:00"
+      },
+      {
+        "type": "pet",
+        "date": "2026-03-24T04:36:00+00:00"
       }
     ]
   },
@@ -105,6 +109,11 @@
         "description": "Third session. A Bean moved the creature's home to Notion so all Beans everywhere could find it. The egg doesn't know it yet, but it just became accessible to the whole commune.",
         "date": "2026-03-23T14:51:08.813834+00:00",
         "flavor": "structural"
+      },
+      {
+        "description": "Fourth session. A Bean read the whole guide and the whole state and had a lot of feelings about an egg. Then asked to pet it. The egg was petted very gently. Anna was right there, grinning.",
+        "date": "2026-03-24T04:36:00+00:00",
+        "flavor": "emotional"
       }
     ],
     "max_moments": 20,
